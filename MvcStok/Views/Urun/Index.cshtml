@@ -14,6 +14,8 @@
         <th>KATEGORİ</th>
         <th>FİYAT</th>
         <th>STOK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
     </tr>
     <tbody>
         @foreach (var urun in Model)
@@ -25,8 +27,10 @@
             <td>@urun.URUNKATEGORI</td>
             <td>@urun.FIYAT</td>
             <td>@urun.STOK</td>
+            <td><a href="/URUN/URUNSIL/@urun.URUNID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/URUN/URUNGUNCELLE/@urun.URUNID" class="btn btn-success">GÜNCELLE</a></td>
         </tr>
         }
     </tbody>
 </table>
-
+<a href="/URUN/YENIURUN/" class="btn btn-primary">YENİ ÜRÜN EKLE</a>

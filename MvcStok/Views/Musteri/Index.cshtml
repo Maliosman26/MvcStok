@@ -11,6 +11,8 @@
         <th>MÜŞTERİ ID</th>
         <th>MÜŞTERİ ADI</th>
         <th>MÜŞTERİ SOYADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
     </tr>
     <tbody>
         @foreach (var musteri in Model)
@@ -19,8 +21,10 @@
                 <th>@musteri.MUSTERIID</th>
                 <td>@musteri.MUSTERIAD</td>
                 <td>@musteri.MUSTERISOYAD</td>
+                <td><a href="/MUSTERI/MUSTERISIL/@musteri.MUSTERIID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/MUSTERI/MUSTERIGUNCELLE/@musteri.MUSTERIID" class="btn btn-success">GÜNCELLE</a></td>
             </tr>
         }
     </tbody>
 </table>
-
+<a href="/MUSTERI/MUSTERIEKLE/" class="btn btn-primary">YENİ MÜŞTERİ EKLE</a>
