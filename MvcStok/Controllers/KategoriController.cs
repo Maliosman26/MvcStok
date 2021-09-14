@@ -24,6 +24,10 @@ namespace MvcStok.Controllers
         [HttpPost]    // Herhangi bir şeye tıklanıldığında gerçekleşecek olay
         public ActionResult YeniKategori(TBLKATEGORILER p1)
         {
+            if(!ModelState.IsValid)
+            {
+                return View("YeniKategori");
+            }
             db.TBLKATEGORILER.Add(p1);
             db.SaveChanges();
             return View();
