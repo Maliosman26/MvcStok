@@ -19,6 +19,13 @@ namespace MvcStok.Controllers
         [HttpGet]
         public ActionResult YeniUrun()
         {
+            List<SelectListItem> degerler = (from i in db.TBLKATEGORILER.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KATEGORIAD,
+                                                 Value = i.KATEGORIID.ToString()
+                                             }).ToList();
+            ViewBag.dgr = degerler;
             return View();
         }
         [HttpPost]
