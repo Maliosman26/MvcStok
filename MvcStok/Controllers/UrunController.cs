@@ -47,6 +47,13 @@ namespace MvcStok.Controllers
         public ActionResult UrunGetir(int id)
         {
             var urun = db.TBLURUNLER.Find(id);
+            List<SelectListItem> degerler = (from i in db.TBLKATEGORILER.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KATEGORIAD,
+                                                 Value = i.KATEGORIID.ToString()
+                                             }).ToList();
+            ViewBag.dgr = degerler;
             return View("UrunGetir", urun);
         }
     }
